@@ -1,0 +1,9 @@
+# Go
+*.out
+bin/
+
+# IDE
+.idea
+
+# Direnv
+.envrc

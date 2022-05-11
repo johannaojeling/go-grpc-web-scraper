@@ -1,0 +1,13 @@
+set -a
+
+# Local
+export HOST="localhost"
+export PORT="50051"
+
+# GCP
+export PROJECT=""
+export REGION=""
+export CLOUD_BUILD_BUCKET=""
+export SA_EMAIL=""
+export IMAGE=""
+export SERVICE=""

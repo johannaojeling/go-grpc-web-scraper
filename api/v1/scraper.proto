@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package scraper;
+
+option go_package = "pkg/api/v1";
+
+import "google/protobuf/timestamp.proto";
+
+message Page {
+  string url = 1;
+  int32 status = 2;
+  string text = 3;
+  google.protobuf.Timestamp timestamp = 4;
+}
+
+message ScrapeRequest {
+  string url = 1;
+  repeated string allowed_domains = 2;
+  int32 max_depth = 3;
+}
+
+message ScrapeResponse {
+  Page page = 1;
+}
+
+service ScraperService {
+  rpc ScrapeUrl (ScrapeRequest) returns (stream ScrapeResponse);
+}

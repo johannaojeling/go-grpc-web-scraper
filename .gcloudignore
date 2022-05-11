@@ -1,0 +1,11 @@
+.envrc
+.envrc.sample
+.gcloudignore
+.git
+.git-hooks
+.github
+.gitignore
+.idea
+.pre-commit-config.yaml
+README.md
+bin/

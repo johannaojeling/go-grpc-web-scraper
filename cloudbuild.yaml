@@ -1,0 +1,10 @@
+steps:
+  - id: "Build container image"
+    name: "gcr.io/cloud-builders/docker"
+    args: [ "build", "-t", "eu.gcr.io/${_PROJECT}/${_IMAGE}", "." ]
+  - id: "Push container image to Container Registry"
+    name: "gcr.io/cloud-builders/docker"
+    args: [ "push", "eu.gcr.io/${_PROJECT}/${_IMAGE}" ]
+images:
+  - "eu.gcr.io/${_PROJECT}/${_IMAGE}"
+logsBucket: "gs://${_LOGS_BUCKET}/logs"
